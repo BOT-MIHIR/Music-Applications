@@ -1,0 +1,5 @@
+jane.doe@email.com,password123,Jane,Doe,30
+mark.smith@email.com,markpass456,Mark,Smith,22
+emma.johnson@email.com,emma789,Emma,Johnson,28
+luke.wilson@email.com,luke@543,Luke,Wilson,34
+sara.miller@email.com,sara!123,Sara,Miller,27
