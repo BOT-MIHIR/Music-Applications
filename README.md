@@ -1,15 +1,16 @@
-# Music Applications
+# BeatBuddies Music Applications
 
 This project is designed to manage and play songs using a database-driven approach via cmd prompt. It includes features for authorization, developer settings, and song management.
 
 ## Installation
 
-1. Clone the repository.
-2. Install required packages by running:
-   ```bash
+1. Install the latest version of python.
+2. Check Python has correctly installed on your system or not by typing the below command.
+      ```bash
    pip install py -0 
-   ```
-3. Run the scripts as needed.
+   ``` 
+4. Download the repository.
+5. Run the scripts as needed.
 
 ## Guide
 
@@ -21,29 +22,20 @@ Loads user data from a user_data.txt file into a dictionary. Each user's informa
 ![Fauntion1](https://github.com/user-attachments/assets/44425f56-2c2b-4fee-810a-f9f048b1e5f9)
 
 
-### 2. save_user_data(user_data)
-Saves the current user data back to the user_data.txt file, updating the records as necessary.
-
-![Fauntion2](https://github.com/user-attachments/assets/d6550c09-dc00-42c2-b52d-a59719410b09)
-
-
-### 3. signin(user_data)
+### 2. signin(user_data)
 Handles user sign-in by checking the entered email and password against stored data. If successful, it welcomes the user; otherwise, it prompts for re-entry.
 
 ![Fauntion3](https://github.com/user-attachments/assets/0b833997-18fa-4a99-8225-41b2f5f90ab1)
 
-### 4. exit_program()
+### 3. exit_program()
 Exits the application with a farewell message.
 
 ![Fauntion4](https://github.com/user-attachments/assets/d2de8312-8c3f-40a4-ba80-a80960bca458)
 
+
 ## Developer_Settings.py Key Functions
 
-# Song Database Management
-
-This Python program allows users to manage a song database by performing operations like loading song data from a file, viewing the database, deleting songs, and modifying song details. The songs are organized in a dictionary, where the artist's name is the key, and the corresponding songs are stored as a list of dictionaries.
-
-## Important Functions
+## Song Database Management
 
 ### 1. load_song_data(filename)
 Loads song details from a specified file into the songs_database. Each line in the file should contain song details separated by commas (Title, Artist, Album, Genre, Duration). 
@@ -66,7 +58,7 @@ Enables users to modify specific details (Album, Genre, Duration) of a song by p
 
 ![Faunction4](https://github.com/user-attachments/assets/780b17ab-5725-4b70-a8f6-c31a9c44fac4)
 
-# Song Database Application Key Functions
+## Song Database Application Key Functions
 
 ### load_song_data(filename)
 - Loads song data from a specified text file into a dictionary (songs_database), structured by artist.
@@ -84,9 +76,6 @@ Enables users to modify specific details (Album, Genre, Duration) of a song by p
 ### main()
 - Serves as the main program loop, loading the song data and presenting a user menu for searching options.
 
-## Usage
-- Ensure the Song_Data.txt file is in the same directory as the script.
-- Run the program, select an option from the menu, and follow the prompts to search for songs.
 
 ## Requirements
 - Python 3.x
@@ -100,8 +89,7 @@ Enables users to modify specific details (Album, Genre, Duration) of a song by p
    - Exit
 3. Follow the prompts to manage your user account.
 
- 
-## Usage
+# Usage
 
 - Use `Authorization_System.py` for managing user access.
 - `Songs_db.py` handles song storage and database operations.
