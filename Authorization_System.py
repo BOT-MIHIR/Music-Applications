@@ -1,18 +1,30 @@
 import subprocess
 
-# Initialize the user_data dictionary
-user_data = {
-    "mihir.suhanda01@sarasai.org": {"password": "MIHI123", "first_name": "Mihir", "last_name": "Suhanda", "age": 23},
-    "umar.farooq01@sarasai.org": {"password": "UMAR123", "first_name": "Umar", "last_name": "Farooq", "age": 18},
-    "shri.harshan01@sarasai.org": {"password": "SHRI123", "first_name": "Shri", "last_name": "Harshan", "age": 20},
-    "ujjwal.kalra01@sarasai.org": {"password": "UJJW123", "first_name": "Ujjwal", "last_name": "Kalra", "age": 22},
-    "khushi.g@sarasai.org": {"password": "Khushi123", "first_name": "Khushi", "last_name": "Gupta", "age": 23},
-    "gaurav.singh@sarasai.org": {"password": "Gaurav123", "first_name": "Gaurav", "last_name": "Singh", "age": 42},
-    "anshuman@sarasai.org": {"password": "Anshuman123", "first_name": "Anshuman", "last_name": "Singh", "age": 38},
-    "vishnu@sarasai.org": {"password": "Vishnu123", "first_name": "Vishnu", "last_name": "Tiwari", "age": 28},
-    "shailesh@sarasai.org": {"password": "Shailesh123", "first_name": "Shailesh", "last_name": "Kumar", "age": 40},
-    "sakshi.g@sarasai.org": {"password": "Sakshi123", "first_name": "Sakshi", "last_name": "Garg", "age": 28},
-}
+# File path to store user data
+user_data_file = "user_data.txt"
+
+# Load user data from a text file
+def load_user_data():
+    user_data = {}
+    try:
+        with open(user_data_file, "r") as file:
+            for line in file:
+                email, password, first_name, last_name, age = line.strip().split(",")
+                user_data[email] = {
+                    "password": password,
+                    "first_name": first_name,
+                    "last_name": last_name,
+                    "age": int(age)
+                }
+    except FileNotFoundError:
+        print("User data file not found.")
+    return user_data
+
+# Save user data to a text file
+def save_user_data(user_data):
+    with open(user_data_file, "w") as file:
+        for email, info in user_data.items():
+            file.write(f"{email},{info['password']},{info['first_name']},{info['last_name']},{info['age']}\n")
 
 # Start menu options
 def start_menu():
@@ -22,28 +34,21 @@ def start_menu():
     print("3. Exit")
 
 # Signup functionality
-def signup(user_data):
-    email = input("Enter Email ID: ")
-    if email in user_data:
-        print("Email ID already exists. Please try with a different email.")
-        return
-
-    password = input("Enter Password: ")
-    first_name = input("Enter First Name: ")
-    last_name = input("Enter Last Name: ")
-    age = int(input("Enter Age: "))
-
-    user_data[email] = {
-        "password": password,
-        "first_name": first_name,
-        "last_name": last_name,
-        "age": age
-    }
-    print(f"User {first_name} registered successfully!")
-    
-    # After successful signup, call the song management system
-    print(f"Welcome, {first_name}!")
-    # run_Developer_Settings()
+def load_user_data():
+    user_data = {}
+    with open('user_data.txt', 'r') as file:
+        for line in file:
+            email, password, first_name, last_name, age = line.strip().split(',')
+            if age.isdigit():
+                user_data[email] = {
+                    "password": password,
+                    "first_name": first_name,
+                    "last_name": last_name,
+                    "age": int(age)
+                }
+            else:
+                print(f"Invalid age for user {email}. Skipping entry.")
+    return user_data
 
 # Sign-in functionality
 def signin(user_data):
@@ -64,6 +69,9 @@ def exit_program():
 
 # Main program loop
 def main():
+    # Load user data from the file at the start
+    user_data = load_user_data()
+
     while True:
         start_menu()
         choice = input("Enter your choice (1/2/3): ")
