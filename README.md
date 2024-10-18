@@ -80,7 +80,11 @@ Enables users to modify specific details (Album, Genre, Duration) of a song by p
 ## Requirements
 - Python 3.x
 
-## Usage
+# Usage
+
+- Use `Authorization_System.py` for managing user access.
+- `Songs_db.py` handles song storage and database operations.
+- Modify `Developer_Settings.py` for developer-specific configurations.
 
 1. Run the application.
 2. Choose an option from the menu: 
@@ -89,11 +93,6 @@ Enables users to modify specific details (Album, Genre, Duration) of a song by p
    - Exit
 3. Follow the prompts to manage your user account.
 
-# Usage
-
-- Use `Authorization_System.py` for managing user access.
-- `Songs_db.py` handles song storage and database operations.
-- Modify `Developer_Settings.py` for developer-specific configurations.
 
 ## Additional Information
 
