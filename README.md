@@ -7,10 +7,15 @@ This project is designed to manage and play songs using a database-driven approa
 1. Clone the repository.
 2. Install required packages by running:
    ```bash
-   pip install -r r
+   pip install py -0 
    ```
 3. Run the scripts as needed.
 
+## Guide
+
+1. 
+
+ 
 ## Usage
 
 - Use `Authorization_System.py` for managing user access.
@@ -24,4 +29,4 @@ Ensure the `Song_Data.txt` file is populated with the correct data format for th
 ## Contributors
 
 - Mihir Suhanda
-- Umar Farooq
+- Umar Farooq Kazi
